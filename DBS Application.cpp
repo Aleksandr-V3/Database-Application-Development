@@ -56,10 +56,10 @@ int findEmployee(Connection*, int, struct Employee*);
 //This function receives a Connection pointer (a reference variable to an Oracle database) and the members of a variable of type Employee and displays all members of the emp parameter. 
 void displayEmployee(struct Employee emp);
 
-//This function receives a pointer of type OCCI Conection (a reference variable to an Oracle database) and displays all employees’ information if it exists.
+//This function receives a pointer of type OCCI Conection (a reference variable to an Oracle database) and displays all employeesâ€™ information if it exists.
 void displayAllEmployees(Connection* conn);
 
-//This function gets the employee’s information from the user and stores the values in the corresponding members of the structure pointed by the emp pointer
+//This function gets the employeeâ€™s information from the user and stores the values in the corresponding members of the structure pointed by the emp pointer
 void insertEmployee(struct Employee* emp);
 
 //This function receives an OCCI pointer (a reference variable to an Oracle database) and a variable of type Employee and inserts the given employee information stored in the parameter emp to the employees table. 
@@ -102,8 +102,8 @@ int main()
     Environment* env = nullptr;
     Connection* conn = nullptr;
 
-    string user = "dbs211_211j30";
-    string pass = "29641191";
+    string user = ""; //user number
+    string pass = ""; //user password
     string constr = "myoracle12c.senecacollege.ca:1521/oracle12c";
 
     try
@@ -457,7 +457,7 @@ void displayAllEmployees(Connection* conn)
     //to check if the result set is empty
     if (!rs->next())
     {
-        cout << "There is no employees’ information to be displayed." << endl;
+        cout << "There is no employeesâ€™ information to be displayed." << endl;
     }
     else
     {
